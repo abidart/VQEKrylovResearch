@@ -45,7 +45,8 @@ Solve H'*c = E * S * c for the lowest eigenvector (E) representing the lowest en
 
 
 
+PROBLEM:
 
-
-
- 
+First of all, the calculated energy from this method is incorrect.
+Also, when calculating the overlap matrix, the diagonal entries should all be 1 because the overlap of a vector with itself should be 1
+However this method calulates it to be 1+1i which cannot be correct.

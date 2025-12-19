@@ -23,7 +23,7 @@ from qiskit_nature.second_q.drivers import PySCFDriver
 from qiskit_nature.second_q.mappers import JordanWignerMapper
 from qiskit_algorithms import VQE
 from qiskit_algorithms.optimizers import SLSQP
-from qiskit.primitives import StatevectorEstimator
+from qiskit.primitives import Estimator
 from qiskit_nature.second_q.circuit.library import HartreeFock, UCCSD
 from qiskit_nature.second_q.algorithms import GroundStateEigensolver
 
@@ -87,7 +87,7 @@ def run_vqe(molecule_name, bond_length):
     optimizer = SLSQP(maxiter=100)
 
     # Primitive: Estimator is used to calculate the expectation value of the Hamiltonian
-    estimator = StatevectorEstimator()
+    estimator = Estimator()
 
     # VQE Algorithm
     vqe = VQE(

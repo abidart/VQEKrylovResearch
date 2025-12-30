@@ -210,14 +210,6 @@ def quantum_krylov_diagonalization():
     print(np.round(S_K.imag, 6))
 
     # The Generalized Eigenvalue Problem is H_K * c = E * S_K * c
-    # Enforce Hermiticity
-    H_K = 0.5 * (H_K + H_K.conj().T)
-    S_K = 0.5 * (S_K + S_K.conj().T)
-
-    # Regularize S_K
-    eps = 1e-10
-    S_K = S_K + eps * np.eye(M)
-
     eigs = la.eig(H_K, S_K, right=False)
 
     # pick the minimum real part (and you may optionally filter small imaginary noise)
